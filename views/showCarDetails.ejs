@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="/cars">Back to Cars list</a>
+
+    <h1>This is you car page</h1>
+    <h1><%=foundCar.brand%></h1>
+    <%if (foundCar.hybrid){%>
+<p>the Car is Hybrid</p>
+    <%} else {%>
+        <p>The car is Non Hybrid You need more fuel for it</p>
+   <% }%>
+   <form action="/cars/<%=foundCar._id%>?_method=DELETE" method="POST">
+   <button>Delete This Car</button>
+</form>
+
+<a href="/cars/<%= foundCar._id%>/edit"> Edit Car</a>
+</body>
+</html>
